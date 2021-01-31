@@ -41,8 +41,7 @@ public class ProductController {
 		Optional<Product> product = Optional.ofNullable(productRepository.findOne(id));
 		
 		return product.map(i -> ResponseEntity.ok().body(i))
-				.orElse(ResponseEntity.notFound().build());
-//				.orElseThrow(() -> new ProductException("product not found"));
+				.orElseThrow(() -> new ProductException("product not found"));
 		
 	}
 	
@@ -54,7 +53,7 @@ public class ProductController {
 	}
 	
 	@DeleteMapping("/products/delete/{id}")
-	public ResponseEntity<Product> deleteProduct(@PathVariable Integer id) {
+	public ResponseEntity<Product> deleteProduct(@PathVariable Integer id) throws ProductException {
 		
 		Optional<Product> product = Optional.ofNullable(productRepository.findOne(id));
 		
@@ -63,12 +62,12 @@ public class ProductController {
 			return new ResponseEntity<>(HttpStatus.OK);
 			
 		}else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			throw new ProductException("product not found");
 		}
 	}
 	
 	@PutMapping("/products/update/{id}")
-	public ResponseEntity<Product> updateProduct(@PathVariable Integer id, @RequestBody Product newProduct) {
+	public ResponseEntity<Product> updateProduct(@PathVariable Integer id, @RequestBody Product newProduct) throws ProductException {
 		
 		Optional<Product> oldProduct = Optional.ofNullable((productRepository.findOne(id)));
 		
@@ -80,7 +79,7 @@ public class ProductController {
 			return new ResponseEntity<Product>(product, HttpStatus.OK);
 			
 		}else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			throw new ProductException("product not found");
 		}
 	}
 }
