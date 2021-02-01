@@ -16,14 +16,14 @@ Build REST API with Spring Boot, JDBC and H2DB.
 git clone https://github.com/diogo09git/rest-api-with-JDBC.git
 ```
 
-**4. Build and run the app using maven**
+**2. Build and run the app using maven**
 
 ```bash
 mvn package
 java -jar target/api-rest-0.0.1-SNAPSHOT.jar
 ```
 
-Alternatively, you can run the app without packaging it using -
+**3. Alternatively, you can run the app without packaging it using**
 
 ```bash
 mvn spring-boot:run
