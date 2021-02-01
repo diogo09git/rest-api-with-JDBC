@@ -20,7 +20,7 @@ git clone https://github.com/diogo09git/rest-api-with-JDBC.git
 
 ```bash
 mvn package
-java -jar target/easy-notes-1.0.0.jar
+java -jar target/api-rest-0.0.1-SNAPSHOT.jar
 ```
 
 Alternatively, you can run the app without packaging it using -
@@ -35,15 +35,15 @@ The app will start running at <http://localhost:8080>.
 
 The app defines following CRUD APIs.
 
-    GET /api/notes
+    GET /api/products
     
-    POST /api/notes
+    GET /api/products/{id}
     
-    GET /api/notes/{noteId}
+    POST /api/products/save
     
-    PUT /api/notes/{noteId}
+    DELETE /api/products/delete/{id}
     
-    DELETE /api/notes/{noteId}
+    PUT /api/products/update/{id}
 
 You can test them using postman or any other rest client.
 
@@ -51,4 +51,3 @@ You can test them using postman or any other rest client.
 
 You can find the tutorial for this application on my blog -
 
-<https://www.callicoder.com/spring-boot-rest-api-tutorial-with-mysql-jpa-hibernate/>
