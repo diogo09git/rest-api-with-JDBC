@@ -45,9 +45,5 @@ The app defines following CRUD APIs.
     
     PUT /api/products/update/{id}
 
-You can test them using postman or any other rest client.
-
-## Learn more
-
-You can find the tutorial for this application on my blog -
+#### You can test them using Postman or any other rest client.
 
