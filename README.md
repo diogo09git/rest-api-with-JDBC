@@ -39,11 +39,11 @@ The app defines following CRUD APIs.
     
     GET /api/products/{id}
     
-    POST /api/products/save
+    POST /api/products
     
-    DELETE /api/products/delete/{id}
+    DELETE /api/products/{id}
     
-    PUT /api/products/update/{id}
+    PUT /api/products/{id}
 
 #### You can test them using Postman or any other rest client.
 

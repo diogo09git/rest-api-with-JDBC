@@ -47,14 +47,14 @@ public class ProductController {
 		
 	}
 	
-	@PostMapping("/products/save")
+	@PostMapping("/products")
 	public ResponseEntity<Product> saveProduct(@RequestBody Product product) {
 		
 		productRepository.save(product);
 		return new ResponseEntity<Product>(product, HttpStatus.CREATED);
 	}
 	
-	@DeleteMapping("/products/delete/{id}")
+	@DeleteMapping("/products/{id}")
 	public ResponseEntity<Product> deleteProduct(@PathVariable Integer id) throws ProductException {
 		
 		Optional<Product> product = Optional.ofNullable(productRepository.findOne(id));
@@ -68,7 +68,7 @@ public class ProductController {
 		}
 	}
 	
-	@PutMapping("/products/update/{id}")
+	@PutMapping("/products/{id}")
 	public ResponseEntity<Product> updateProduct(@PathVariable Integer id, @RequestBody Product newProduct) throws ProductException {
 		
 		Optional<Product> oldProduct = Optional.ofNullable((productRepository.findOne(id)));
